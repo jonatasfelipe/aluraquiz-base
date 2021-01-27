@@ -1,9 +1,15 @@
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+
 import db from '../db.json';
-import Widget from '../src/components/Widget'
-import QuizBackground from '../src/components/QuizBackground'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
+import Widget from '../src/components/Widget';
+import QuizLogo from '../src/components/QuizLogo';
+import QuizBackground from '../src/components/QuizBackground';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
+
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -24,15 +30,56 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] =React.useState('');
+
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        /*  Primary Meta Tags */     
+        <title>Quiz - Programação</title>
+        <meta name="title" content="Quiz - Programação"/>
+        <meta name="description" content="Venha testar seus conhecimentos sobre programação."/>
+
+        /* Open Graph / Facebook */
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://metatags.io/"/>
+        <meta property="og:title" content="Quiz - Programação"/>
+        <meta property="og:description" content="Venha testar seus conhecimentos sobre programação."/>
+        <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"/>
+
+        /* Twitter */
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:url" content="https://metatags.io/"/>
+        <meta property="twitter:title" content="Quiz - Programação"/>
+        <meta property="twitter:description" content="Venha testar seus conhecimentos sobre programação."/>
+        <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"/>
+      </Head>
       <QuizContainer>
+        <QuizLogo/>
         <Widget>
           <Widget.Header>
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>{db.description}</p>
+            <form onSubmit={function (infosDoEvento) {
+              infosDoEvento.preventDefault();
+              router.push(`/quiz?name=${name}`);
+              console.log('Fazendo uma submissão por meio do react');
+            }}
+            >
+              <input
+                onChange={function (infosDoEvento) {
+                  // State
+                  // name = infosDoEvento.target.value;
+                  setName(infosDoEvento.target.value);
+                }} 
+                placeholder="Digite seu nome"/>
+              <button type="submit" disabled={name.length === 0}>
+                Jogar
+                {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
 
