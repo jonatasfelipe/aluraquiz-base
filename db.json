@@ -4,27 +4,52 @@
     "description": "Descubra abaixo seu conhecimento no mundo da programação!",
     "questions": [
         {
-            "image": "https://placehold.it/400x400",
+            "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--ohpJlve1--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/drquzbncy/image/upload/v1586605549/javascript_banner_sxve2l.jpg",
             "title": "Questão numero 01",
-            "description": "Descrição da questão numero #01",
+            "description": "Qual dos itens abaixo não é um evento do JS?",
             "answer": 1,
             "alternatives": [
-                "Alternativa A",
-                "Alternativa B",
-                "Alternativa C",
-                "Alternativa D"
+                "onChange",
+                "onLoad",
+                "onclick",
+                "onStart"
             ]
         },
         {
-            "image": "https://placehold.it/400x400",
+            "image": "https://kinsta.com/wp-content/uploads/2018/05/what-is-php-3-1.png",
             "title": "Questão numero 02",
-            "description": "Descrição da questão numero #02",
+            "description": "Das opções abaixo qual não é um nome de variável válido?",
             "answer": 2,
             "alternatives": [
-                "Alternativa A",
-                "Alternativa B",
-                "Alternativa C",
-                "Alternativa D"
+                "$valor1",
+                "$Valor1",
+                "$_valor1",
+                "$1valor"
+            ]
+        },
+        {
+            "image": "https://s2.glbimg.com/5Iz4ZzSACXeBMQACRQmPliuTERw=/696x390/top/smart/s2.glbimg.com/vME2Bq4OSpm6f6IE16BhcVLR98U=/695x0/s.glbimg.com/po/tt2/f/original/2014/11/14/java-logo.jpg",
+            "title": "Questão numero 03",
+            "description": "Qual será o resultado do método System.out.println(\"Seu texto\") ?",
+            "answer": 2,
+            "alternatives": [
+                "Imprime \"Seu texto\" e encerra a aplicação.",
+                "Imprime Seu texto e pula o cursor para a próxima linha.",
+                "Imprime \"Seu texto\" e pula o cursor para a próxima linha.",
+                "Imprime Seu texto na primeira impressora disponível."
+            ]
+        },
+        {
+            "image": "https://i2.wp.com/www.vooo.pro/insights/wp-content/uploads/2018/05/Python_logo.png?fit=1200%2C508&ssl=1",
+            "title": "Questão numero 04",
+            "description": "Qual a expressão correta para exibirmos resultados com Python versão > 3?",
+            "answer": 2,
+            "alternatives": [
+                "print (\"Bem vindo ao Python!\")",
+                "print (Bem vindo ao Python!)",
+                "print Bem vindo ao Python!",
+                "print 'Bem vindo ao Python!'"
+                
             ]
         }
     ],
@@ -33,7 +58,7 @@
     ],
     "theme": {
         "colors": {
-            "primary": "#4CAF50",
+            "primary": "limegreen",
             "secondary": "#FF9800",
             "mainBg": "#1C1814",
             "contrastText": "#FFFFFF",

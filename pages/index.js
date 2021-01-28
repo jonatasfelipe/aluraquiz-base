@@ -9,7 +9,9 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import QuizGalera from '../src/components/QuizGalera/';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -18,7 +20,7 @@ import GitHubCorner from '../src/components/GitHubCorner';
 //   background-position: center;
 // `;
 
-export const QuizContainer = styled.div`
+const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
   padding-top: 45px;
@@ -36,19 +38,17 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        /*  Primary Meta Tags */     
+        
         <title>Quiz - Programação</title>
         <meta name="title" content="Quiz - Programação"/>
         <meta name="description" content="Venha testar seus conhecimentos sobre programação."/>
 
-        /* Open Graph / Facebook */
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://metatags.io/"/>
         <meta property="og:title" content="Quiz - Programação"/>
         <meta property="og:description" content="Venha testar seus conhecimentos sobre programação."/>
         <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"/>
 
-        /* Twitter */
         <meta property="twitter:card" content="summary_large_image"/>
         <meta property="twitter:url" content="https://metatags.io/"/>
         <meta property="twitter:title" content="Quiz - Programação"/>
@@ -62,32 +62,33 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
+            <p>{db.description}</p>
             <form onSubmit={function (infosDoEvento) {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
               console.log('Fazendo uma submissão por meio do react');
             }}
             >
-              <input
-                onChange={function (infosDoEvento) {
-                  // State
-                  // name = infosDoEvento.target.value;
-                  setName(infosDoEvento.target.value);
-                }} 
-                placeholder="Digite seu nome"/>
-              <button type="submit" disabled={name.length === 0}>
-                Jogar
-                {name}
-              </button>
+              <Input
+                name="nomeDoUsuario"
+                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
+                placeholder="Digite seu nome"
+                value={name}
+                />
+              <Button type="submit" disabled={name.length === 0}>
+                 {`Jogar ${name}`}
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
 
         <Widget>
           <Widget.Content>
-            <h1>Aqui será inserido as questões</h1>
-
-            <p>Exemplo: Questão número 01</p>
+            <h1>Quizes da Galera</h1>
+            <p>Dá uma olhada nesses quizes incriveis que o pessoal da Imersão React fez:</p>
+            <QuizGalera linkQuiz="https://imersao-alura-peach.vercel.app/" />
+            <QuizGalera linkQuiz="https://quiz-beatles.victorcorrea1.vercel.app/" />
+            <QuizGalera linkQuiz="https://aluraquiz-show.noebezerra.vercel.app/" />
           </Widget.Content>
         </Widget>
         <Footer />
