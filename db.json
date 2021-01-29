@@ -7,7 +7,7 @@
             "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--ohpJlve1--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/drquzbncy/image/upload/v1586605549/javascript_banner_sxve2l.jpg",
             "title": "Questão numero 01",
             "description": "Qual dos itens abaixo não é um evento do JS?",
-            "answer": 1,
+            "answer": 3,
             "alternatives": [
                 "onChange",
                 "onLoad",
@@ -23,15 +23,16 @@
             "alternatives": [
                 "$valor1",
                 "$Valor1",
-                "$_valor1",
-                "$1valor"
+                "$1valor",
+                "$_valor1"
+                
             ]
         },
         {
             "image": "https://s2.glbimg.com/5Iz4ZzSACXeBMQACRQmPliuTERw=/696x390/top/smart/s2.glbimg.com/vME2Bq4OSpm6f6IE16BhcVLR98U=/695x0/s.glbimg.com/po/tt2/f/original/2014/11/14/java-logo.jpg",
             "title": "Questão numero 03",
             "description": "Qual será o resultado do método System.out.println(\"Seu texto\") ?",
-            "answer": 2,
+            "answer": 1,
             "alternatives": [
                 "Imprime \"Seu texto\" e encerra a aplicação.",
                 "Imprime Seu texto e pula o cursor para a próxima linha.",
@@ -46,16 +47,17 @@
             "answer": 2,
             "alternatives": [
                 "print (\"Bem vindo ao Python!\")",
-                "print (Bem vindo ao Python!)",
                 "print Bem vindo ao Python!",
+                "print (Bem vindo ao Python!)",
                 "print 'Bem vindo ao Python!'"
                 
             ]
         }
     ],
     "external": [
-        
-    ],
+        "https://aluraquiz-css.omariosouto.vercel.app/",
+    "https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
+     ],
     "theme": {
         "colors": {
             "primary": "limegreen",
